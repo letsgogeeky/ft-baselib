@@ -5,33 +5,43 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/01 20:02:16 by ramoussa          #+#    #+#              #
-#    Updated: 2023/07/07 18:51:32 by ramymoussa       ###   ########.fr        #
+#    Created: 2023/04/17 16:26:51 by ramoussa          #+#    #+#              #
+#    Updated: 2023/07/07 19:01:40 by ramymoussa       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = getnextline.a
-SOURCE = get_next_line.c get_next_line_utils.c
-BONUS_SOURCE = get_next_line_bonus.c get_next_line_utils_bonus.c
+NAME = baselib.a
 
-OBJ = $(SOURCE:%.c=%.o)
-
-BONUS_OBJ = $(BONUS_SOURCE:%.c=%.o)
+LIBFT := libft
+GNL := get-next-line
+PRINTF := ftprintf
+LIBFT_LIB = $(LIBFT)/libft.a
+GNL_LIB := $(GNL)/getnextline.a
+PRINTF_LIB := $(PRINTF)/libftprintf.a
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c -Wall -Wextra -Werror -D BUFFER_SIZE=100 $(SOURCE)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): libft gnl printf
+	
+libft:
+	cd $(LIBFT) && make
 
-bonus:
-	gcc -c -Wall -Wextra -Werror -D BUFFER_SIZE=100 $(BONUS_SOURCE)
-	ar rcs $(NAME) $(BONUS_OBJ)
+gnl:
+	cd $(GNL) && make
+	
+printf:
+	cd $(PRINTF) && make
 
 clean:
-	/bin/rm -f *.o
+	cd $(LIBFT) && make clean
+	cd $(GNL) && make clean
+	cd $(PRINTF) && make clean
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	cd $(LIBFT) && make fclean
+	cd $(GNL) && make fclean
+	cd $(PRINTF) && make fclean
 
 re: fclean all
+
+.PHONY: all libft clean fclean re
