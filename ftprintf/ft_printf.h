@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 21:44:02 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/07/06 20:27:06 by ramymoussa       ###   ########.fr       */
+/*   Updated: 2023/08/02 06:23:48 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include "../libft/libft.h"
 
 int	ft_printf(const char *str, ...);
 int	handle_char(char c, int fd);
