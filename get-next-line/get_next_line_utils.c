@@ -6,13 +6,13 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:08:06 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/04/10 17:25:59 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/02 06:39:05 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *c)
+int	gnl_strlen(char *c)
 {
 	int	size;
 
@@ -28,7 +28,7 @@ int	ft_strlen(char *c)
 	return (size);
 }
 
-void	ft_bzero(void *s, int len)
+void	gnl_bzero(void *s, int len)
 {
 	int		idx;
 	char	*tmp;
@@ -42,7 +42,7 @@ void	ft_bzero(void *s, int len)
 	}
 }
 
-char	*ft_calloc(size_t count, size_t size)
+char	*gnl_calloc(size_t count, size_t size)
 {
 	char	*str;
 
@@ -53,11 +53,11 @@ char	*ft_calloc(size_t count, size_t size)
 	{
 		return (free(str), str = NULL, NULL);
 	}
-	ft_bzero(str, count * size);
+	gnl_bzero(str, count * size);
 	return (str);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*gnl_strchr(const char *s, int c)
 {
 	unsigned char	cr;
 
@@ -77,17 +77,17 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2, int s2_len)
+char	*gnl_strjoin(char *s1, char *s2, int s2_len)
 {
 	unsigned int	len;
 	char			*str;
 	unsigned int	str_idx;
 	int				s2_idx;
 
-	len = ft_strlen(s1) + s2_len;
+	len = gnl_strlen(s1) + s2_len;
 	str_idx = 0;
 	s2_idx = 0;
-	str = (char *)ft_calloc(len + 1, sizeof(char));
+	str = (char *)gnl_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s1 && s1[str_idx] != '\0')

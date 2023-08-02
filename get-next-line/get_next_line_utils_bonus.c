@@ -6,13 +6,13 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 18:30:04 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/04/09 15:53:25 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/02 06:39:04 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *c)
+int	gnl_strlen(char *c)
 {
 	int	size;
 
@@ -28,7 +28,7 @@ int	ft_strlen(char *c)
 	return (size);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*gnl_strjoin(char *s1, char *s2)
 {
 	unsigned int	len;
 	char			*str;
@@ -36,7 +36,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = gnl_strlen(s1) + gnl_strlen(s2);
 	str_idx = 0;
 	str = (char *)malloc(len + 1);
 	if (!str)
@@ -57,7 +57,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (str);
 }
 
-void	ft_bzero(void *s, int len)
+void	gnl_bzero(void *s, int len)
 {
 	int		idx;
 	char	*tmp;
@@ -71,7 +71,7 @@ void	ft_bzero(void *s, int len)
 	}
 }
 
-char	*ft_calloc(unsigned int count, unsigned int size)
+char	*gnl_calloc(unsigned int count, unsigned int size)
 {
 	char	*str;
 
@@ -80,11 +80,11 @@ char	*ft_calloc(unsigned int count, unsigned int size)
 	{
 		return (NULL);
 	}
-	ft_bzero(str, count * size);
+	gnl_bzero(str, count * size);
 	return (str);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*gnl_strchr(const char *s, int c)
 {
 	unsigned char	cr;
 

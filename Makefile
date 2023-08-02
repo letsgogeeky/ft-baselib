@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+         #
+#    By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/17 16:26:51 by ramoussa          #+#    #+#              #
-#    Updated: 2023/07/07 19:01:40 by ramymoussa       ###   ########.fr        #
+#    Updated: 2023/08/02 07:04:46 by ramoussa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,29 +18,36 @@ PRINTF := ftprintf
 LIBFT_LIB = $(LIBFT)/libft.a
 GNL_LIB := $(GNL)/getnextline.a
 PRINTF_LIB := $(PRINTF)/libftprintf.a
+LIBS := ${LIBFT_LIB} ${PRINTF_LIB}
+HEADERS := ${LIBFT}/libft.h ${GNL}/get_next_line.h ${PRINTF}/ft_printf.h
+SRCS := ${GNL}/get_next_line.c \
+			${GNL}/get_next_line_utils.c \
+			$(PRINTF)/ft_printf.c \
+			$(PRINTF)/hex_types.c \
+			$(PRINTF)/string_types.c \
+			$(PRINTF)/numeric_types.c
+
+OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): libft gnl printf
+$(NAME): libft ${OBJS}
+	cp ${LIBFT_LIB} $(NAME)
+	ar -crs $(NAME) $(OBJS) && echo "Base Lib Successful build...!"
 	
 libft:
 	cd $(LIBFT) && make
-
-gnl:
-	cd $(GNL) && make
 	
-printf:
-	cd $(PRINTF) && make
-
 clean:
-	cd $(LIBFT) && make clean
-	cd $(GNL) && make clean
-	cd $(PRINTF) && make clean
+	make clean --directory=$(LIBFT)
+	make clean --directory=$(PRINTF)
+	make clean --directory=$(GNL)
 
-fclean: clean
-	cd $(LIBFT) && make fclean
-	cd $(GNL) && make fclean
-	cd $(PRINTF) && make fclean
+fclean:
+	make fclean --directory=$(LIBFT)
+	make fclean --directory=$(PRINTF)
+	make fclean --directory=$(GNL)
+	rm -rf baselib.a
 
 re: fclean all
 
