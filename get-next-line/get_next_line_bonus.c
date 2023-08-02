@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 18:28:12 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/04/10 17:25:24 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/02 06:39:12 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*adjust_buffer(char *str)
 		buffer_idx++;
 	if (!str[buffer_idx])
 		return (free(str), NULL);
-	new_buffer = ft_calloc(ft_strlen(str) - buffer_idx + 1, sizeof(char));
+	new_buffer = gnl_calloc(gnl_strlen(str) - buffer_idx + 1, sizeof(char));
 	if (new_buffer == NULL)
 		return (NULL);
 	buffer_idx++;
@@ -52,9 +52,9 @@ static char	*get_line(char *str)
 	while (str[i] && str[i] != '\n')
 		i++;
 	if (str[i] != '\n')
-		line = ft_calloc(i + 1, sizeof(char));
+		line = gnl_calloc(i + 1, sizeof(char));
 	else
-		line = ft_calloc(i + 2, sizeof(char));
+		line = gnl_calloc(i + 2, sizeof(char));
 	i = 0;
 	while (str[i])
 	{
@@ -70,12 +70,12 @@ static char	*get_line(char *str)
 	return (line);
 }
 
-static char	*ft_read_from_fd(int fd, char *str)
+static char	*gnl_read_from_fd(int fd, char *str)
 {
 	int		read_size;
 	char	*tmp;
 
-	tmp = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	tmp = gnl_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!tmp)
 		return (NULL);
 	read_size = read(fd, tmp, BUFFER_SIZE);
@@ -83,9 +83,9 @@ static char	*ft_read_from_fd(int fd, char *str)
 	{
 		tmp[read_size] = '\0';
 		if (!str)
-			str = ft_calloc(1, sizeof(char));
-		str = ft_strjoin(str, tmp);
-		if (ft_strchr(str, '\n'))
+			str = gnl_calloc(1, sizeof(char));
+		str = gnl_strjoin(str, tmp);
+		if (gnl_strchr(str, '\n'))
 			break ;
 		read_size = read(fd, tmp, BUFFER_SIZE);
 		if (read_size == -1)
@@ -111,10 +111,10 @@ char	*get_next_line(int fd)
 	if (read(fd, 0, 0) < 0)
 	{
 		if (buffer[fd])
-			ft_bzero(buffer[fd], ft_strlen(buffer[fd]));
+			gnl_bzero(buffer[fd], gnl_strlen(buffer[fd]));
 		return (NULL);
 	}
-	buffer[fd] = ft_read_from_fd(fd, buffer[fd]);
+	buffer[fd] = gnl_read_from_fd(fd, buffer[fd]);
 	if (!buffer[fd])
 	{
 		return (NULL);

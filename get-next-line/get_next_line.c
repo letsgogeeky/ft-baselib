@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:08:04 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/04/10 17:23:31 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/02 06:39:03 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*adjust_buffer(char *str)
 		buffer_idx++;
 	if (!str[buffer_idx])
 		return (free(str), NULL);
-	new_buffer = ft_calloc(ft_strlen(str) - buffer_idx + 1, sizeof(char));
+	new_buffer = gnl_calloc(gnl_strlen(str) - buffer_idx + 1, sizeof(char));
 	if (new_buffer == NULL)
 		return (free(str), free(new_buffer), NULL);
 	buffer_idx++;
@@ -52,9 +52,9 @@ static char	*get_line(char *str)
 	while (str[i] && str[i] != '\n')
 		i++;
 	if (str[i] != '\n')
-		line = ft_calloc(i + 1, sizeof(char));
+		line = gnl_calloc(i + 1, sizeof(char));
 	else
-		line = ft_calloc(i + 2, sizeof(char));
+		line = gnl_calloc(i + 2, sizeof(char));
 	i = 0;
 	while (str[i])
 	{
@@ -70,12 +70,12 @@ static char	*get_line(char *str)
 	return (line);
 }
 
-static char	*ft_read_from_fd(int fd, char *str)
+static char	*gnl_read_from_fd(int fd, char *str)
 {
 	int		read_size;
 	char	*tmp;
 
-	tmp = ft_calloc(BUFFER_SIZE, sizeof(char));
+	tmp = gnl_calloc(BUFFER_SIZE, sizeof(char));
 	if (!tmp)
 		return (free(str), NULL);
 	read_size = read(fd, tmp, BUFFER_SIZE);
@@ -83,8 +83,8 @@ static char	*ft_read_from_fd(int fd, char *str)
 		return (free(tmp), free(str), NULL);
 	while (read_size > 0)
 	{
-		str = ft_strjoin(str, tmp, read_size);
-		if (str && ft_strchr(str, '\n'))
+		str = gnl_strjoin(str, tmp, read_size);
+		if (str && gnl_strchr(str, '\n'))
 			break ;
 		read_size = read(fd, tmp, BUFFER_SIZE);
 		if (read_size == -1)
@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (free(buffer), buffer = NULL, NULL);
-	buffer = ft_read_from_fd(fd, buffer);
+	buffer = gnl_read_from_fd(fd, buffer);
 	if (!buffer)
 		return (NULL);
 	line = get_line(buffer);
