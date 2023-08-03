@@ -7,4 +7,6 @@ How to use
 `make`
 use `baselib.a` in your desired project.
 
+In `include/` folder find the header file that exports functions you can use from the library
+
 have fun.. i guess? haha kidding, or am I?
