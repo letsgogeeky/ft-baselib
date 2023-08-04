@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+         #
+#    By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/17 16:26:51 by ramoussa          #+#    #+#              #
-#    Updated: 2023/08/02 07:04:46 by ramoussa         ###   ########.fr        #
+#    Updated: 2023/08/04 17:23:37 by ramymoussa       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,11 @@ OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): libft ${OBJS}
+$(NAME): ${OBJS}
+	make --directory=${LIBFT}
 	cp ${LIBFT_LIB} $(NAME)
-	ar -crs $(NAME) $(OBJS) && echo "Base Lib Successful build...!"
-	
-libft:
-	cd $(LIBFT) && make
-	
+	ar -crs $(NAME) $(OBJS) && echo "Baselib Successful build...!"
+
 clean:
 	make clean --directory=$(LIBFT)
 	make clean --directory=$(PRINTF)
