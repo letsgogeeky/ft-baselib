@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 04:56:19 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/04 05:20:05 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:43:49 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	put_double(int fd, double num, u_int8_t percision)
 	p_idx = 0;
 	count = put_int((int)num, fd);
 	num = num - (int)num;
+	if (num < 0)
+		num *= -1;
 	if (percision > 0)
 	{
 		count += write(fd, ".", 1);

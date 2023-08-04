@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 21:44:51 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/06/10 01:18:54 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:38:52 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	type_factory(va_list *params, char fmt)
 		return (handle_int_hex(va_arg(*params, unsigned int), 0, 1));
 	else if (fmt == 'X')
 		return (handle_int_hex(va_arg(*params, unsigned int), 1, 1));
+	else if (fmt == 'f')
+		return (put_double(1, va_arg(*params, double), 15));
 	else if (fmt == '%')
 		return (write(1, "%", 1));
 	return (0);
