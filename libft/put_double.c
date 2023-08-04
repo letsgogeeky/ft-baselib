@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_double.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 04:56:19 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/04 05:43:49 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 17:27:06 by ramymoussa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	put_double(int fd, double num, u_int8_t percision)
 {
-	double	original;
 	int		count;
 	int		p_idx;
 
-	original = num;
 	p_idx = 0;
 	count = put_int((int)num, fd);
 	num = num - (int)num;
