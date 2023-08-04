@@ -6,11 +6,10 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:55:57 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/29 20:21:27 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:07:24 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))

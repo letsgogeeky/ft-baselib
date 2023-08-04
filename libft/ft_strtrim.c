@@ -6,11 +6,10 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:18:24 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/26 19:03:36 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:04:50 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)

@@ -6,11 +6,10 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:15:08 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/25 16:17:57 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:07:59 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(unsigned int count, unsigned int size)

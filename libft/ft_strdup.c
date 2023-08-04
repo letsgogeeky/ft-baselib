@@ -6,11 +6,10 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:56:16 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/25 16:24:46 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:05:51 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)
