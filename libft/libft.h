@@ -6,12 +6,14 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/28 21:09:49 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:04:26 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -70,5 +72,8 @@ t_list			*ft_lstmap(
 					void *(*f)(void *),
 					void (*del)(void *)
 					);
+
+int				put_int(int n, int fd);
+int				put_double(int fd, double num, u_int8_t percision);
 
 #endif

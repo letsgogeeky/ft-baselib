@@ -6,7 +6,7 @@
 #    By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 18:55:03 by ramoussa          #+#    #+#              #
-#    Updated: 2023/03/28 20:47:17 by ramoussa         ###   ########.fr        #
+#    Updated: 2023/08/04 04:57:32 by ramoussa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SOURCE = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c  \
 		ft_strlcat.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+		put_int.c put_double.c
 
 BONUS_SOURCE = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \

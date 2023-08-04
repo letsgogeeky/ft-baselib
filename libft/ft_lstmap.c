@@ -6,11 +6,10 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:32:16 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/29 20:18:51 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:06:56 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew_safe(void *content)
