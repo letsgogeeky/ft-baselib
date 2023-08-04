@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/04 05:04:26 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:20:54 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,44 @@ t_list			*ft_lstmap(
 					void (*del)(void *)
 					);
 
+/**
+ * Writes a signed integer to the specified file descriptor.
+ *
+ * This function takes a signed integer `n` and writes its textual representation
+ * to the given file descriptor `fd`. The function handles both positive and
+ * negative integers, including the special case of the most negative value
+ * (-2147483648). The function returns the number of characters written to the
+ * file descriptor on success, or -1 on failure.
+ *
+ * Note: This function is used for writing integers to a file descriptor and
+ * does not add a newline or any other separators after the number.
+ *
+ * @param n The signed integer to be written.
+ * @param fd The file descriptor where the integer will be written.
+ * @return The number of characters written on success, or -1 on failure.
+ */
 int				put_int(int n, int fd);
+
+/**
+ * Writes a double-precision floating-point number to specified file descriptor.
+ *
+ * This function takes a double-precision floating-point number `num` and writes
+ * its textual representation to the given file descriptor `fd`. The `percision`
+ * parameter specifies the number of decimal places to be displayed for the
+ * fractional part of the number. The function returns the number of characters
+ * written to the file descriptor on success.
+ *
+ * The function internally converts the double value into its integer and
+ * fractional parts and uses the `put_int` function to write the integer part to
+ * the file descriptor. If the `percision` value is greater than zero, it writes
+ * the fractional part by multiplying the remaining decimal values with 10 and
+ * repeatedly calling `put_int` to write each digit to the file descriptor.
+ *
+ * @param fd The file descriptor where the double will be written.
+ * @param num The double-precision floating-point number to be written.
+ * @param percision The number of decimal places for the fractional part.
+ * @return The number of characters written to the file descriptor on success.
+ */
 int				put_double(int fd, double num, u_int8_t percision);
 
 #endif
