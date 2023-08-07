@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/04 05:20:54 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/07 16:45:34 by ramymoussa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ int				put_int(int n, int fd);
  * @return The number of characters written to the file descriptor on success.
  */
 int				put_double(int fd, double num, u_int8_t percision);
+double			get_double(char	*str);
 
 #endif
