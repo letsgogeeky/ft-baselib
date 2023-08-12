@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/07 16:45:34 by ramymoussa       ###   ########.fr       */
+/*   Updated: 2023/08/12 23:14:24 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,7 @@ int				put_int(int n, int fd);
  */
 int				put_double(int fd, double num, u_int8_t percision);
 double			get_double(char	*str);
+size_t			str_arr_len(char **arr);
+void			str_arr_free(char **arr);
 
 #endif
