@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/12 23:14:24 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/16 21:20:48 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void			*ft_calloc(unsigned int count, unsigned int size);
 char			*ft_strdup(const char *s1);
 char			*ft_substr(const char *s, unsigned int start, unsigned int len);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin_s1_free(char *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
@@ -115,5 +116,7 @@ int				put_double(int fd, double num, u_int8_t percision);
 double			get_double(char	*str);
 size_t			str_arr_len(char **arr);
 void			str_arr_free(char **arr);
+void			ra_replace(char *str, char a, char b);
+int				ra_is_whiteshapce(char c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 18:55:03 by ramoussa          #+#    #+#              #
-#    Updated: 2023/08/14 00:06:25 by ramoussa         ###   ########.fr        #
+#    Updated: 2023/08/16 14:28:59 by ramoussa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SOURCE = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c  \
 		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 		ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-		put_int.c put_double.c ra_array.c
+		put_int.c put_double.c ra_array.c ra_str.c
 
 RED_BOLD := \033[1;31m
 GREEN := \033[0;32m
