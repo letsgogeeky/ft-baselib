@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/21 16:15:30 by ramymoussa       ###   ########.fr       */
+/*   Updated: 2023/08/21 22:53:32 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ size_t			str_arr_len(char **arr);
 void			str_arr_free(char **arr);
 void			ra_replace(char *str, char a, char b);
 int				ra_is_whiteshapce(char c);
-int 			ra_is_prime(int number);
+int				ra_is_prime(int number);
 void			ra_print_str_arr_fd(char **arr, int fd);
 
 #endif
