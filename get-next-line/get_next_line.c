@@ -6,12 +6,10 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:08:04 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/02 06:39:03 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/29 23:18:06 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "get_next_line.h"
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 10000000

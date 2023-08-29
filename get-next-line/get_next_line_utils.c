@@ -6,11 +6,11 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:08:06 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/02 06:39:05 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/29 23:16:26 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "get_next_line.h"
 
 int	gnl_strlen(char *c)
 {
