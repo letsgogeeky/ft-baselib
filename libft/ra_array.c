@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra_array.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramymoussa <ramymoussa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 22:58:49 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/21 13:54:40 by ramymoussa       ###   ########.fr       */
+/*   Updated: 2023/08/30 00:18:41 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	str_arr_free(char **arr)
 	while (arr && arr[idx] != 0)
 	{
 		free(arr[idx]);
+		idx++;
 	}
 	free(arr);
 }

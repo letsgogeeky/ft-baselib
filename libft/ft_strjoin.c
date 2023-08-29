@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 18:38:45 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/16 20:17:13 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/30 01:16:58 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 char	*ft_strjoin_s1_free(char *s1, char const *s2)
 {
-	unsigned int	s1_size;
-	unsigned int	s2_size;
 	char			*str;
-	unsigned int	str_idx;
-	unsigned int	iter_idx;
 
-	s1_size = ft_strlen(s1);
-	s2_size = ft_strlen(s2);
-	str_idx = 0;
-	iter_idx = 0;
-	str = (char *)malloc(s1_size + s2_size + 1);
-	if (str == 0)
-		return (0);
-	while (s1[iter_idx] != '\0')
-		str[str_idx++] = s1[iter_idx++];
-	iter_idx = 0;
-	while (s2[iter_idx] != '\0')
-		str[str_idx++] = s2[iter_idx++];
-	str[str_idx] = '\0';
+	str = ft_strjoin(s1, s2);
 	return (free(s1), str);
 }
