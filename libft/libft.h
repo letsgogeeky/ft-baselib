@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:08:56 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/08/21 22:53:32 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:13:16 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -60,6 +61,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+int				ft_iswhitespace(char c);
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 int				ft_lstsize(t_list *lst);
@@ -120,5 +122,8 @@ void			ra_replace(char *str, char a, char b);
 int				ra_is_whiteshapce(char c);
 int				ra_is_prime(int number);
 void			ra_print_str_arr_fd(char **arr, int fd);
+int				ra_int_in_bound(long num);
+long long		ra_parse_long(const char *str);
+int				ra_is_int(char *str);
 
 #endif
